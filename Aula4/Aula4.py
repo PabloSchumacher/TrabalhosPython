@@ -1,14 +1,11 @@
-#Aula 4
+#Aula 4 11-11-2019
 # Fazer um programa que leia 2 números
 # Realize as 4 operações matemáticas
 # Imprima o resultado das operações
 # Diga qual número é o maior dos dois números
-import os
 
 n1 = float(input('Digite o primeiro número: '))
 n2 = float(input('Digite o segundo número: '))
-
-print("\n" * os.get_terminal_size().lines)
 
 print('='*50,'\n')
 
