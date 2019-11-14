@@ -6,9 +6,10 @@
 
 marca = input('Informe a marca: ')
 tipo = input('Informe o tipo: ')
-ibu = input('Informe o ibu: ')
-ibv = input('Informe o ibv: ')
-volume = float(input('Informe o volume: '))
+ibu = int(input('Informe o IBU: '))
+ibv = int(input('Informe o IBV: '))
+ebc = float(input('Informe o EBC: '))
+volume = int(input('Informe o volume: '))
 
 print('\n')
 print('=-='*30)
