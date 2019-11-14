@@ -10,5 +10,12 @@ ibu = input('Informe o ibu: ')
 ibv = input('Informe o ibv: ')
 volume = float(input('Informe o volume: '))
 
+print('\n')
+print('=-='*30)
+print('\n')
+
 cerveja = {'Marca':marca, "Tipo":tipo, 'IBU':ibu, 'IBV':ibv, 'Volume':volume}
 print(f"Marca: {cerveja['Marca']} - Tipo: {cerveja['Tipo']} - IBU: {cerveja['IBU']} - IBV: {cerveja['IBV']} - Volume: {cerveja['Volume'] }")
+
+print('\n')
+print('=-='*30)
