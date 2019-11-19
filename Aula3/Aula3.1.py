@@ -1,26 +1,42 @@
-#--- Aula 3 18-11-2019
-#--- Input - Estrutura de decisão
-lista_numeros = [1,2,3]
-if 'Teti'.count('t') > 0 :
-    print('Existe "t" em "Teti')
+#--- Aula 3  18-11-2019
+#--- Input e Estruturas de decisão
 
-if 'e'.count('Teti') > 0 :
-    print('Existe "a" em "Teti')
+# lista_numeros = [1,2,3]
+# numero = 2
+# if 'Teti'.count('t') > 0 :
+#     print('Existe "t" em "teti" ')
 
-if 'M'.count('Teti') > 0 :
-    print('Não xiste "M" em "Teti')
+# if 'e' in 'Teti' :
+#     print('Existe "e" em "teti" ')
 
-if numero in lista_numeros:
-    print('Existe')
-else:
-    print('Não Existe')
+# if 'M' not in 'Teti' :
+#     print('Nao Existe "M" em "teti" ')
 
-lista_vazia = []
+# if numero in lista_numeros:
+#     print('Existe')
+# else:
+#     print('Nao existe')
 
-if len(lista_numeros) ==0:
-    print('Vazia')
-else:
-    print('Não Vazio')
 
-if lista_vazia:
-    print('Vazia')
+
+# if len(lista_numeros) ==0 :
+#     print('Vazia')
+# else:
+#     print('Não Vazio')
+
+# lista_nomes = []
+# if lista_nomes:
+#     print('Tem nomes')
+# else:
+#     print('Não tem nomes')
+
+nome = ''
+print(nome)
+nome = 'Maykon'
+print(nome[2])
+#nome[2] = 'T'
+print(nome)
+# if nome:
+#     print('Preenchido')
+# else:
+#     print('Vazio')
