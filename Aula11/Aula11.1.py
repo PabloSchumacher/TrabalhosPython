@@ -9,7 +9,10 @@
 #---    baseando-se em sua rentabilidade mensal (jutos compostos)
 #---    a rentabilidade deve ser representada em % e R$
 #---    utilizar metodos
-#--- 3- 
+#--- 3- crie um programa para calculo de investimento
+#---    Solicitar a quantidade de cotas do tesouro selic 
+#---    (Considerar o valor do tesouro Selic Hoje 21/11/2019)
+#---    Calcular o valor total ate o vencimento do título
 #---    utilizar metodos
 #--- 4- 
 #---    utilizar metodos
