@@ -46,7 +46,6 @@ def ler():
 
 #2:
 lista = ler()
-lista_maiores = []
 maiores = open('C:\\Users\\900157\\Documents\\GitHub\\TrabalhosPython\\Aula19\\exercicios\\maiores.txt','a')
 menores = open('C:\\Users\\900157\\Documents\\GitHub\\TrabalhosPython\\Aula19\\exercicios\\menores.txt','a')
 for dicionario in lista:
@@ -58,10 +57,24 @@ maiores.close()
 menores.close()
 
 #3:
-def contar(lista):
+def contador(lista):
+    lista = ler()
+    lista_maiores = []
+    homens = open('C:\\Users\\900157\\Documents\\GitHub\\TrabalhosPython\\Aula19\\exercicios\\homens.txt','a')
+    mulheres = open('C:\\Users\\900157\\Documents\\GitHub\\TrabalhosPython\\Aula19\\exercicios\\mulheres.txt','a')
+    contarhomens = 0
+    contarmulheres = 0
     for dicionario in lista:
-        if dicionario['Sexo'] == "m":
-            dicionario['Sexo'].count("m")
-            a = dicionario['Sexo'].count("m")
-            print(a)
-contar(lista)            
+            if dicionario['Sexo'] == "m":
+                homens.write(f'{dicionario["ID"]};{dicionario["Nome"]};{dicionario["Idade"]};{dicionario["Sexo"]};{dicionario["Email"]};{dicionario["Telefone"]}\n')
+                contarhomens += 1
+            else:
+                mulheres.write(f'{dicionario["ID"]};{dicionario["Nome"]};{dicionario["Idade"]};{dicionario["Sexo"]};{dicionario["Email"]};{dicionario["Telefone"]}\n')
+                contarmulheres += 1
+    homens.close()
+    mulheres.close()
+    contador = (f'Homens: {contarhomens} Mulheres: {contarmulheres}')
+    return contador
+
+print(contador(lista))
+
