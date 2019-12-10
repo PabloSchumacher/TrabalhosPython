@@ -31,3 +31,6 @@ moeda = [{'Moeda(s)':1.00},{'Moeda(s)':0.50},{'Moeda(s)':0.25},
 # Monte um metodo que leia um valor e imprima (f-string) a quantidade de 
 # cada nota(s) e moeda(s) necessária(s) para devolver o troco ao cliente.
 
+def metodo(nota, moeda):
+        valor = input('Informe um valor: ')
+        
