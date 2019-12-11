@@ -19,9 +19,20 @@ def dados(iduser, nome, idade, cpf, telefone, pais, estado, cidade, rua, n):
 listacadastro = []
 def cadastro():
     cadastro = open('Aula17/cadastro.txt','a')
-    cadastro.write(f'{dados["id"]};{dados["nome"]};{dados["idade"]};{dados["cpf"]};;{dados["telefone"]};;{dados["pais"]};;{dados["estado"]};;{dados["cidade"]};;{dados["rua"]};;{dados["n"]}\n')
+    cadastro.write(f'{dados["id"]};{dados["nome"]};{dados["idade"]};{dados["cpf"]};{dados["telefone"]};{dados["pais"]};{dados["estado"]};{dados["cidade"]};{dados["rua"]};{dados["n"]}\n')
     cadastro.close()
     return cadastro
+
+def dadosprodutos(idprod, nome, marca, validade, garantia):
+    dadosprodutos = {'id':idprod, 'nome':nome, 'marca':marca, 'validade':validade, 'garantia':garantia}
+    return dadosprodutos
+
+listacadastroprodutos = []
+def cadastroprodutos():
+    cadastroprodutos = open('Aula17/cadastroprodutos.txt','a')
+    cadastroprodutos.write(f'{dadosprodutos["id"]};{dadosprodutos["nome"]};{dadosprodutos["marca"]};{dadosprodutos["validade"]};{dadosprodutos["garantia"]}\n')
+    cadastroprodutos.close()
+    return cadastroprodutos
 
 def ler_dados():
     cadastro = open('Aula17/cadastro.txt','r')
@@ -32,6 +43,19 @@ def ler_dados():
         dadoss = dados(dados_dados[0],dados_dados[1],dados_dados[2],dados_dados[3],dados_dados[4],dados_dados[5],dados_dados[6],dados_dados[7],dados_dados[8],dados_dados[9])
         lista_dados.append(dadoss)
     cadastro.close()
+    return lista_dados
+
+
+def ler_dadosprodutos():
+    cadastroprodutos = open('Aula17/cadastroprodutos.txt','r')
+    lista_dados = []
+    for linha in cadastroprodutos:
+        linha = linha.strip()
+        dados_dadosprodutos = linha.split(';')
+        dadossprodutos = dadosprodutos(dados_dadosprodutos[0],dados_dadosprodutos[1],dados_dadosprodutos[2],dados_dadosprodutos[3],dados_dadosprodutos[4])
+        listacadastroprodutos.append(dadossprodutos)
+    cadastroprodutos.close()
+    return listacadastroprodutos
 
 while True:
     opcao = input(menu)
@@ -51,14 +75,19 @@ while True:
         cadastro = cadastro()
 
     elif opcao == '2':
-        ler = ler_dados()
-        print(ler)
+        print(ler_dados())
 
     elif opcao == '3':
-        print('Cadastro de Produtos')
+        idprod = input('Informe o ID: ')
+        nome = input('Informe o nome: ')
+        marca = input('Informe a marca: ')
+        validade = input('Informe a validade: ')
+        garantia = input('Informe a garantia: ')
+        dadosprodutos = dadosprodutos(idprod, nome, marca, validade, garantia)
+        cadastroprodutos = cadastroprodutos()
 
     elif opcao == '4':
-        print('Ver produtos cadastrados')
+        print(ler_dadosprodutos())
 
     elif opcao == '5':
         print('Vendas')

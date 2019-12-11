@@ -36,4 +36,4 @@ try:
         lista.append(int(input('Digite um número: ')))
     print (lista)
 except (ValueError):
-    print('\nErro! Digite numeor inteiro!')
+    print('\nErro! Digite numero inteiro!')
