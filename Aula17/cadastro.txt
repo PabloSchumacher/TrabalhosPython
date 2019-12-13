@@ -1,2 +1,1 @@
-ID: 1;Nome: João;Idade: 19;CPF: 131232132131;Telefone: 479198321;País: Brasil;Estado: Santa Catarina;Cidade: Blumenau;Rua: Jooj;Número: 121
-ID: 2;Nome: a;Idade: b;CPF: c;Telefone: d;País: e;Estado: f;Cidade: g;Rua: h;Número: i
+1;2;3;4;5;6;7;8;9;0;1;2
