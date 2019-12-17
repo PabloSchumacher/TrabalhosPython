@@ -58,52 +58,92 @@ print(', '.join(lista_cadastrados1))
 
 lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'], ['2', 'Haroldo', '44', 'f', 'baratarebelde@gmail.com', '050923172729'], ['3', 'Pilar', '50', 'm', 'wanderson10sp@gmail.com', '018937341049'], ['4', 'Suzete Salvador', '45', 'f', 'eladiomp2@yahoo.com.br', '056928409823'], ['5', 'Riane', '37', 'f', 'orkutzimpower@terra.com.br', '018916004377'], ['6', 'Waldir', '34', 'f', 'nandah.s2@bol.com.br', '058903756441'], ['7', 'Lilian', '22', 'f', 'arydoido@gmail.com', '031958621596'], ['8', 'Matilde', '20', 'm', 'eu_kaka_@hotmail.com', '012941959390'], ['9', 'Samanta', '19', 'm', 'carro.tuning@yahoo.com.br', '028964480437'], ['10', 'Margarida', '30', 'm', 'paraaconta.08@hotmail.com', '047903547580'], ['11', 'Evelyn', '31', 'm', 'joaosilvaticudo@gmail.com', '053958638386'], ['12', 'Alessio', '29', 'm', 'w.nill02@gmail.com', '033961294774'], ['13', 'Yolanda', '25', 'm', 'patty_karen2005@hotmail.com', '027903312626'], ['14', 'Germana', '33', 'f', 'jarlinhatopdelinhagv@hotmail.com', '053964603415'], ['15', 'Helio', '33', 'f', 'juh.slim@gmail.com', '046997316461'], ['16', 'Liége', '21', 'f', 'gledsonlds@hotmail.com', '056992948431'], ['17', 'Yan', '42', 'm', 'lucapratto@yahoo.com.br', '016963562866'], ['18', 'Silvain', '50', 'f', 'hie.s2@hotmail.com', '021963399433'], ['19', 'Brian', '33', 'f', 'juliagabrielle06@hotmail.com', '027962676732'], ['20', 'Deoclides', '40', 'f', 'patriciamascena@gmail.com', '012961047979'], ['21', 'Jaqueline', '32', 'm', 'aninha183@hotmail.com', '014958997782'], ['22', 'Rosamaria', '45', 'f', 'j_leosao@hotmail.com', '026944672627'], ['23', 'Carla', '42', 'm', 'jhasdfjo@hotmail.com', '046976625208'], ['24', 'Aida Santos', '30', 'f', 'nayara.cristinap@hotmail.com', '034920819199'], ['25', 'Thomas', '19', 'm', 'jfdslinda@bol.com.br', '030974027667'], ['26', 'Naiara', '23', 'm', 'darknees_666@ig.com.br', '018976696717'], ['27', 'Karyne', '17', 'm', 'garotosonhador_1@hotmail.com', '054984689319'], ['28', 'Alenis Dias', '43', 'f', 'vi_vi_cristinaf@hotmail.com', '034980886309'], ['29', 'Grace', '38', 'm', 'amandakell@uol.com.br', '041932906720'], ['30', 'Zacarias', '31', 'm', 'loca.som@hotmail.com', '041926007066']]
 
+cont = -1
+for i in lista_cadastros:
+    cont += 1
+    print(', '.join(lista_cadastros[cont]))
 
 
 # 4) Crie uma função que solicite 5 nomes e retorne uma lista com todos eles
 
-
+nomes = []
+# for i in range(5):
+#     nomes.append(input('Digite um nome: '))
 
 # 5) Com a lista "Nomes", feita no exercicio 4 (anterior) faça uma cópia para 'Nomes2' e adicione 
 # o nome "Pedro Paulada" no "Nomes" e "Paulo Cacetada" no "Nomes2"
 
-
+nomes2 = nomes.copy()
+nomes.append('Pedro Paulada')
+print(nomes)
+nomes2.append('Paulo Cacetada')
+print(nomes2)
 
 # 6) Com a lista 'lista_aninhada' faça uma cópia e nomeie como 'lista_aninhada_2'. Na lista_aninhada
 # adicione ao lado do número 9 o número 10. Na lista_aninhada_2 adicione ao lado do número 8 a frase 
 # "Aqui não pode ter o número 10!"
 
 lista_aninhada = [1,2,3,[4,5,[7,[9],8],6]]
-
-
+lista_aninhada_2 = lista_aninhada.copy()
+lista_aninhada[3][2][1].append(10)
+print(lista_aninhada)
+lista_aninhada_2[3][2].append("Aqui não pode ter o número 10!")
+print(lista_aninhada_2)
 
 # 7) Continuando o exercicio, adicione a lista Nomes (exercicio 4) na lista_aninhada entre os números
 # 2 e o 3. Na lista_aninhada_2 adicione a "Pedro Pedroca" entre os números 4 e 5. 
 # Adicione na lista_aninhada, entre os números 1 e 2, a frase 'um, dois' e na lista_aninhada_2, 
 # entre os números 1 e 2 a frase 'Adiciono qualquer coisa em qualquer lugar nesta lista!'
 
+lista_aninhada.insert(2,nomes)
+print(lista_aninhada)
+lista_aninhada_2[3].insert(1,'Pedro Pedroca')
+print(lista_aninhada_2)
+lista_aninhada.insert(1,'um, dois')
+print(lista_aninhada)
+lista_aninhada_2.insert(1, 'Adiciono qualquer coisa em qualquer lugar nesta lista!')
+print(lista_aninhada_2)
 
 # 8) Com a lista1, ordene os números de maior para menor!
 
 lista1 = lista_simples_int(100)
-
+lista1order = sorted(lista1)
+print(lista1order)
 
 # 9) Com a lista2, ordene os números de menor para maior!
 
 lista2 = lista_simples_int(100)
+lista2order = sorted(lista2, reverse=True)
+print(lista2order)
 
 # 10) Usando o metodo, adicione a lista1 e lista2 (já ordenadas) na lista0.
 
 lista0 = []
+lista0.extend(lista1)
+lista0.extend(lista2)
+print(lista0)
 
 # 11) Ordene a lista0 e diga qual é o maior valor, menor valor e em quais das listas (lista1 ou lista2)
 # estes pertencem.
 
+print(sorted(lista0))
+print(f'Maior valor: {max(lista0)}, Menor valor: {min(lista0)}')
 
 # 12) Com a lista_aninhada e lista_aninhada2, do exercicio 7, remova todas as alterações que nelas foram
 # colocadas. Salve os dados removidos em uma lista e imprima na tela cada item em uma linha
 # usando o f-string (use o .pop() )
 
+print(lista_aninhada)
+print(lista_aninhada_2)
+lista_aninhada[5][3][1].pop(1)
+lista_aninhada.pop(3)
+lista_aninhada[4].pop(1)
+lista_aninhada[4].pop(0)
+lista_aninhada[4][1].pop(3)
+lista_aninhada.pop(1)
+print(lista_aninhada)
+lista_aninhada_2.pop(1)
+print(lista_aninhada_2)
 
 
 # 13) Remova, usando o .remove(), os seguintes itens destas listas:
@@ -120,13 +160,22 @@ lista0 = []
 
 lista_cadastro = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
                   'estado', 'cidade', 'cep', 'bairro', 'rua', 'numero', 'complemento']
+lista_cadastro.remove('cpf')
+lista_cadastro.remove('rua')
+lista_cadastro.remove('cidade')
+lista_cadastro.remove('data_de_nascimento')
 
 lista_cadastrados = ['1', '11111111111', 'João Carlos', '12/12/90',
                   'SC', 'Camboriú', '8833', 'Tabuleiro', 'Cerejeiras', '45', 'ap 101']
+lista_cadastrados.remove('Camboriú')
+lista_cadastrados.remove('8833')
+lista_cadastrados.remove('João Carlos')
+lista_cadastrados.remove('11111111111')
 
 lista_cadastrados1 = ['2', '22222222222', 'Paulo Roberto', '23/01/89',
                   'SC', 'Blumenau', '99999', 'Velha', '7 de setembro', '55', '']
-
+lista_cadastrados1.remove('Paulo Roberto')
+lista_cadastrados1.remove('Velha')
 
 
 # 14) Com a lista_fusao mostre com f-strig e o metodo .index() a posição dos seguintes elementos:
@@ -146,7 +195,8 @@ lista_fusao = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
                   'SC', 'Camboriú', '8833', 'Tabuleiro', 'Cerejeiras', '45', 'ap 101',
                   '2', '22222222222', 'Paulo Roberto', '23/01/89',
                   'SC', 'Blumenau', '99999', 'Velha', '7 de setembro', '55', '']
-
+print(f'''cidade: {lista_fusao.index('cidade')} - João Carlos: {lista_fusao.index('João Carlos')} - Camboriú: {lista_fusao.index('Camboriú')} - 12/12/90: {lista_fusao.index('12/12/90')} - 
+99999: {lista_fusao.index('99999')} - nome_completo: {lista_fusao.index('nome_completo')} - 22222222222: {lista_fusao.index('22222222222')} - Tabuleiro: {lista_fusao.index('Tabuleiro')} - numero: {lista_fusao.index('numero')}''')
 
 # 15) Usando o metodo .index(), Crie uma função que localize a posição dos seguintes nomes: 
 # Germana, Deoclides, Zacarias, Karyne, Helio, Silvain, Aida Santos
@@ -160,10 +210,14 @@ lista_fusao = ['codigo', 'cpf', 'nome_completo', 'data_de_nascimento',
 
 # Dica: Use o tratamento de ecessões para evitar erro ao procurar um indice que não existe!
 
+# nome = input('Informe o nome: ')
+# def localize(lista_cadastros,nome):
+#     return lista_cadastros.index(nome)
 
 
-lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'], ['2', 'Haroldo', '44', 'f', 'baratarebelde@gmail.com', '050923172729'], ['3', 'Pilar', '50', 'm', 'wanderson10sp@gmail.com', '018937341049'], ['4', 'Suzete Salvador', '45', 'f', 'eladiomp2@yahoo.com.br', '056928409823'], ['5', 'Riane', '37', 'f', 'orkutzimpower@terra.com.br', '018916004377'], ['6', 'Waldir', '34', 'f', 'nandah.s2@bol.com.br', '058903756441'], ['7', 'Lilian', '22', 'f', 'arydoido@gmail.com', '031958621596'], ['8', 'Matilde', '20', 'm', 'eu_kaka_@hotmail.com', '012941959390'], ['9', 'Samanta', '19', 'm', 'carro.tuning@yahoo.com.br', '028964480437'], ['10', 'Margarida', '30', 'm', 'paraaconta.08@hotmail.com', '047903547580'], ['11', 'Evelyn', '31', 'm', 'joaosilvaticudo@gmail.com', '053958638386'], ['12', 'Alessio', '29', 'm', 'w.nill02@gmail.com', '033961294774'], ['13', 'Yolanda', '25', 'm', 'patty_karen2005@hotmail.com', '027903312626'], ['14', 'Germana', '33', 'f', 'jarlinhatopdelinhagv@hotmail.com', '053964603415'], ['15', 'Helio', '33', 'f', 'juh.slim@gmail.com', '046997316461'], ['16', 'Liége', '21', 'f', 'gledsonlds@hotmail.com', '056992948431'], ['17', 'Yan', '42', 'm', 'lucapratto@yahoo.com.br', '016963562866'], ['18', 'Silvain', '50', 'f', 'hie.s2@hotmail.com', '021963399433'], ['19', 'Brian', '33', 'f', 'juliagabrielle06@hotmail.com', '027962676732'], ['20', 'Deoclides', '40', 'f', 'patriciamascena@gmail.com', '012961047979'], ['21', 'Jaqueline', '32', 'm', 'aninha183@hotmail.com', '014958997782'], ['22', 'Rosamaria', '45', 'f', 'j_leosao@hotmail.com', '026944672627'], ['23', 'Carla', '42', 'm', 'jhasdfjo@hotmail.com', '046976625208'], ['24', 'Aida Santos', '30', 'f', 'nayara.cristinap@hotmail.com', '034920819199'], ['25', 'Thomas', '19', 'm', 'jfdslinda@bol.com.br', '030974027667'], ['26', 'Naiara', '23', 'm', 'darknees_666@ig.com.br', '018976696717'], ['27', 'Karyne', '17', 'm', 'garotosonhador_1@hotmail.com', '054984689319'], ['28', 'Alenis Dias', '43', 'f', 'vi_vi_cristinaf@hotmail.com', '034980886309'], ['29', 'Grace', '38', 'm', 'amandakell@uol.com.br', '041932906720'], ['30', 'Zacarias', '31', 'm', 'loca.som@hotmail.com', '041926007066']]
-
+# lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014908648117'], ['2', 'Haroldo', '44', 'f', 'baratarebelde@gmail.com', '050923172729'], ['3', 'Pilar', '50', 'm', 'wanderson10sp@gmail.com', '018937341049'], ['4', 'Suzete Salvador', '45', 'f', 'eladiomp2@yahoo.com.br', '056928409823'], ['5', 'Riane', '37', 'f', 'orkutzimpower@terra.com.br', '018916004377'], ['6', 'Waldir', '34', 'f', 'nandah.s2@bol.com.br', '058903756441'], ['7', 'Lilian', '22', 'f', 'arydoido@gmail.com', '031958621596'], ['8', 'Matilde', '20', 'm', 'eu_kaka_@hotmail.com', '012941959390'], ['9', 'Samanta', '19', 'm', 'carro.tuning@yahoo.com.br', '028964480437'], ['10', 'Margarida', '30', 'm', 'paraaconta.08@hotmail.com', '047903547580'], ['11', 'Evelyn', '31', 'm', 'joaosilvaticudo@gmail.com', '053958638386'], ['12', 'Alessio', '29', 'm', 'w.nill02@gmail.com', '033961294774'], ['13', 'Yolanda', '25', 'm', 'patty_karen2005@hotmail.com', '027903312626'], ['14', 'Germana', '33', 'f', 'jarlinhatopdelinhagv@hotmail.com', '053964603415'], ['15', 'Helio', '33', 'f', 'juh.slim@gmail.com', '046997316461'], ['16', 'Liége', '21', 'f', 'gledsonlds@hotmail.com', '056992948431'], ['17', 'Yan', '42', 'm', 'lucapratto@yahoo.com.br', '016963562866'], ['18', 'Silvain', '50', 'f', 'hie.s2@hotmail.com', '021963399433'], ['19', 'Brian', '33', 'f', 'juliagabrielle06@hotmail.com', '027962676732'], ['20', 'Deoclides', '40', 'f', 'patriciamascena@gmail.com', '012961047979'], ['21', 'Jaqueline', '32', 'm', 'aninha183@hotmail.com', '014958997782'], ['22', 'Rosamaria', '45', 'f', 'j_leosao@hotmail.com', '026944672627'], ['23', 'Carla', '42', 'm', 'jhasdfjo@hotmail.com', '046976625208'], ['24', 'Aida Santos', '30', 'f', 'nayara.cristinap@hotmail.com', '034920819199'], ['25', 'Thomas', '19', 'm', 'jfdslinda@bol.com.br', '030974027667'], ['26', 'Naiara', '23', 'm', 'darknees_666@ig.com.br', '018976696717'], ['27', 'Karyne', '17', 'm', 'garotosonhador_1@hotmail.com', '054984689319'], ['28', 'Alenis Dias', '43', 'f', 'vi_vi_cristinaf@hotmail.com', '034980886309'], ['29', 'Grace', '38', 'm', 'amandakell@uol.com.br', '041932906720'], ['30', 'Zacarias', '31', 'm', 'loca.som@hotmail.com', '041926007066']]
+# lista = localize(lista_cadastros,nome)
+# print(lista)
 
 # 16) Conte na lista1 a quantidade dos seguintes valores (use o f-string):
 # 16.1) 4529
@@ -187,7 +241,27 @@ lista_cadastros = [['1', 'Arnaldo', '23', 'm', 'alexcabeludo2@hotmail.com', '014
 # 16.19) 306
 
 lista1 = lista_simples_int(10000)
-
+print(f'''
+{lista1.count(4529)}
+{lista1.count(29)}
+{lista1.count(1107)}
+{lista1.count(7927)}
+{lista1.count(6967)}
+{lista1.count(5964)}
+{lista1.count(8893)}
+{lista1.count(3972)}
+{lista1.count(10)}
+{lista1.count(8548)}
+{lista1.count(8214)}
+{lista1.count(169)}
+{lista1.count(6214)}
+{lista1.count(15)}
+{lista1.count(4937)}
+{lista1.count(9909)}
+{lista1.count(3412)}
+{lista1.count(6306)}
+{lista1.count(306)}
+''')
 
 ###################### .reverse() ######################
 
@@ -197,7 +271,8 @@ lista1 = lista_simples_int(10000)
 
 
 listabin = binario()
-
+s = ''.join(listabin)
+print(int(s, 2))
 
 # 18) com as seguintes listas, imprima elas e .reverte() suas posições. Some as posições e retorne a lista com
 # as somas.
