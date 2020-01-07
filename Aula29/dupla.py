@@ -1,4 +1,4 @@
-terminal = ['Presidiário','Policial' , 'Chefe', 'Oficial1', 'Oficial2','Piloto', 'Comissária1','Comissária2']
+terminal = ['Presidiário','Policial','Piloto', 'Oficial1','Oficial2','Chefe','Comissária1','Comissária2']
 aviao = []
 
 def transporte():
@@ -6,11 +6,11 @@ def transporte():
         return(f'Todos foram transportados')
     elif terminal[0] == 'Presidiário' or terminal[0] == 'Policial':
         return(f'O {terminal[0]} está sendo transportado e o {terminal[1]} está dirigindo.')
-    elif terminal[0] == 'Chefe' and terminal[1] != 'Piloto':
+    elif terminal[0] == 'Piloto' and terminal[1] != 'Chefe':
         return(f'O {terminal[1]} está sendo transportado e o {terminal[0]} está dirigindo.')
-    elif terminal[0] == 'Chefe':
+    elif terminal[0] == 'Piloto':
         return(f'O {terminal[0]} está sendo transportado e o {terminal[1]} está dirigindo.')
-    elif terminal[0] == 'Piloto' and terminal[len(terminal)-1] != 'Piloto.':
+    elif terminal[0] == 'Chefe' and terminal[len(terminal)-1] != 'Chefe.':
         return(f'A {terminal[1]} está sendo transportado e o {terminal[0]} está dirigindo.')
 
 
@@ -34,7 +34,7 @@ def mostrar(terminal,aviao):
             
             if a == '':
 
-                if terminal[0] == 'Piloto' and terminal[len(terminal)-1] != 'Piloto' and terminal[1] == 'Comissária2':
+                if terminal[0] == 'Chefe' and terminal[len(terminal)-1] != 'Chefe' and terminal[1] == 'Comissária2':
                     pas = terminal.pop(1)
                     aviao.append(pas)
                     pas = terminal.pop(0)
@@ -42,13 +42,13 @@ def mostrar(terminal,aviao):
 
                     menu()
                     
-                elif terminal[0] == 'Piloto' and terminal[len(terminal)-1] != 'Piloto':
+                elif terminal[0] == 'Chefe' and terminal[len(terminal)-1] != 'Chefe':
                     pas = terminal.pop(1)
                     aviao.append(pas)
 
                     menu()
 
-                elif terminal[0] == 'Chefe' and terminal[1] != 'Piloto':
+                elif terminal[0] == 'Piloto' and terminal[1] != 'Chefe':
                     pas = terminal.pop(1)
                     aviao.append(pas)
 
