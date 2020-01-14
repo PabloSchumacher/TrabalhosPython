@@ -12,20 +12,36 @@
 
 import MySQLdb
 
-conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
-
+#Listando Todos dados da tabela
 def listar_todos(c):
-    c.execute('select * from pessoas')
+    c.execute('select * FROM tb_pessoa')
     pessoas = c.fetchall()
-    for p in pessoas:
-        print (p)
+    for p  in  pessoas:
+        print(p)
 
-def buscar_por_id(c,id):
-    c.execute(f'select * from pessoas where id = {id}')
-    pessoas = c.fetchone()
-    print(pessoas)
+#Buscar por Id
+def buscar_por_id(c, id):
+    c.execute(f'select * FROM tb_pessoa WHERE ID = {id}')
+    pessoa = c.fetchone()
+    print(pessoa)
+#Buscar por Sobrenome
+def buscar_por_sobrenome(c, sobrenome):
+    c.execute(f"select * FROM tb_pessoa WHERE SOBRENOME like '{sobrenome}%' ")
+    for p  in  c.fetchall():
+        print(p)
 
-conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
-cursor=conexao.cursor()
+conexao = MySQLdb.connect(host='localhost', database='aula_bd', user='root', passwd='')
+cursor= conexao.cursor()
 
-buscar_por_id(cursor,1)
+#listar_todos(cursor)
+# buscar_por_id(cursor, 3)
+#buscar_por_sobrenome(cursor,'Sil')
+
+#Salvar Pessoa
+def salvar(cn,cr,Nome,SobreNome,Idade, endereco_id=None):
+    if endereco_id == None:
+        endereco_id = 'NULL'
+    cr.execute(f"insert into tb_pessoa (Nome,SobreNome,Idade,endereco_id) VALUES ('{Nome}', '{SobreNome}' , {Idade} , {endereco_id} ) ")
+    cn.commit()
+
+salvar(conexao,cursor,'Pablo','Cardoso',12,2)
