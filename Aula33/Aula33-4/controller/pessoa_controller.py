@@ -1,4 +1,3 @@
-
 from model.pessoa import Pessoa
 from dao.pessoa_db import PessoaDb
 

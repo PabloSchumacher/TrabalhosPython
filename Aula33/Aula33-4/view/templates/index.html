@@ -7,6 +7,7 @@
     <title>Pessoas</title>
 </head>
 <body>
+
     <table>
         <thead>
             <tr>
@@ -18,13 +19,40 @@
             </tr>
         </thead>
         <tbody>
-            {% for p in lista %}
+            {% for p in lista_pessoas %}
             <tr>
                 <td>{{ p.id}}</td>
                 <td>{{ p.nome}}</td>
                 <td>{{ p.sobrenome}}</td>
                 <td>{{ p.idade}}</td>
                 <td>{{ p.endereco_id}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Logradouro</th>
+                <th>Numero</th>
+                <th>Complemento</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>CEP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in lista_enderecos %}
+            <tr>
+                <td>{{ p.id}}</td>
+                <td>{{ p.logradouro}}</td>
+                <td>{{ p.numero}}</td>
+                <td>{{ p.complemento}}</td>
+                <td>{{ p.bairro}}</td>
+                <td>{{ p.cidade}}</td>
+                <td>{{ p.cep}}</td>
             </tr>
             {% endfor %}
         </tbody>
