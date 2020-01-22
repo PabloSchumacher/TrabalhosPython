@@ -1,7 +1,7 @@
-from Dao.squad_dao import SquadDao
-from Model.squad import *
+from Dao.sgbd_dao import SgbdDao
+from Model.sgbd import *
 
-class SquadController:
+class SgbdController:
     dao = SquadDao()
 
     def listar_todos(self):

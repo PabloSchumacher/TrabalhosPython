@@ -1,40 +1,30 @@
 import MySQLdb
-from Model.squad import Squad
+from Model.sgbd import Sgbd
 
-class SquadDao:
+class SgbdDao:
     conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
     cursor = conexao.cursor()
 
     def listar_todos(self):
-        comando = f"select * from squad"
+        comando = f"select * from sgbd"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"select * from squad where id = {id}"
+        comando = f"select * from sgbd where id = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
 
     def salvar(self, squad:Squad):
-        comando = f""" insert into squad
+        comando = f""" insert into sgbd
         (
-            nome,
-            descricao,
-            npessoas,
-            fk_backend,
-            fk_frontend,
-            fk_sgbd
+            nome
         )
         values
         (
-            '{squad.nome}',
-            '{squad.descricao}',
-            {squad.npessoas},
-            {squad.fk_backend},
-            {squad.fk_frontend},
-            {squad.fk_sgbd}
+            '{sgbd.nome}'
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()
@@ -42,20 +32,15 @@ class SquadDao:
         return id_inserido
 
     def alterar(self, squad:Squad):
-        comando = f""" update squad
+        comando = f""" update sgbd
         set
-            nome = '{squad.nome}',
-            descricao ='{squad.descricao}',
-            npessoas = {squad.npessoas},
-            fk_backend = {squad.fk_backend},
-            fk_frontend = {squad.fk_frontend},
-            fk_sgbd = {squad.fk_sgbd}
+            nome = '{sgbd.nome}'
         where id = {squad.id}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def deletar(self, id):
-        comando = f"delete from squad where id = {id}"
+        comando = f"delete from sgbd where id = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
