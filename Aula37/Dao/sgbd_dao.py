@@ -32,11 +32,11 @@ class SgbdDao:
         return id_inserido
 
     def alterar(self, sgbd:Sgbd):
-        comando = f""" update sgbd
-        set
-            nome = '{sgbd.nome}'
-        where idsgbd = {squad.id}
-        """
+        comando = f"""UPDATE sgbd 
+                    SET nome = '{sgbd.nome}'
+                    WHERE idsgbd = {sgbd.idsgbd}
+                    """
+
         self.cursor.execute(comando)
         self.conexao.commit()
 

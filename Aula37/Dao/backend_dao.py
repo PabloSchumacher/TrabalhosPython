@@ -35,7 +35,7 @@ class BackendDao:
         comando = f""" update backend
         set
             nome = '{backend.nome}'
-        where idbackend = {backend.id}
+        where idbackend = {backend.idbackend}
         """
         self.cursor.execute(comando)
         self.conexao.commit()

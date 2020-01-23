@@ -1,5 +1,3 @@
-import sys
-sys.path.append( r"C:\Users\900157\Documents\Github\TrabalhosPython\Aula37" )
 from Dao.sgbd_dao import SgbdDao
 from Model.sgbd import *
 
@@ -16,7 +14,7 @@ class SgbdController:
         return self.dao.salvar(sgbd)
 
     def alterar(self, sgbd:Sgbd):
-        self.dao.alterar(sgbd)
+        return self.dao.alterar(sgbd)
 
     def deletar(self, id):
         self.dao.deletar(id)
