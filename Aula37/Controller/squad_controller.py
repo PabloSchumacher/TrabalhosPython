@@ -1,5 +1,8 @@
 from Dao.squad_dao import SquadDao
 from Model.squad import *
+from Controller.backend_controller import BackendController
+from Controller.frontend_controller import FrontendController
+from Controller.sgbd_controller import SgbdController
 
 class SquadController:
     dao = SquadDao()

@@ -2,7 +2,7 @@ import MySQLdb
 from Model.sgbd import Sgbd
 
 class SgbdDao:
-    conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans08', user='padawans08', passwd='kp2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -17,7 +17,7 @@ class SgbdDao:
         resultado = self.cursor.fetchone()
         return resultado
 
-    def salvar(self, squad:Squad):
+    def salvar(self, sgbd:Sgbd):
         comando = f""" insert into sgbd
         (
             nome
@@ -31,7 +31,7 @@ class SgbdDao:
         id_inserido = self.cursor.lastrowid
         return id_inserido
 
-    def alterar(self, squad:Squad):
+    def alterar(self, sgbd:Sgbd):
         comando = f""" update sgbd
         set
             nome = '{sgbd.nome}'

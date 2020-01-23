@@ -3,4 +3,4 @@ class Backend:
     nomeling = ''
 
     def __str__(self):
-        return f'{self.idbackend};{self.nomeling}'
+        return f'{self.idbackend};{self.nome}'

@@ -2,7 +2,7 @@ import MySQLdb
 from Model.squad import Squad
 
 class SquadDao:
-    conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans08', user='padawans08', passwd='kp2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -32,9 +32,9 @@ class SquadDao:
             '{squad.nome}',
             '{squad.descricao}',
             {squad.npessoas},
-            {squad.fk_backend},
-            {squad.fk_frontend},
-            {squad.fk_sgbd}
+            {squad.backend.id},
+            {squad.frontend.id},
+            {squad.sgbd.id}
         )"""
         self.cursor.execute(comando)
         self.conexao.commit()

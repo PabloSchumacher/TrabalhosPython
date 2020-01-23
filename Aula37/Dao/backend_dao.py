@@ -2,7 +2,7 @@ import MySQLdb
 from Model.backend import Backend
 
 class BackendDao:
-    conexao = MySQLdb.connect(host='localhost', database='aulabd', user='root', passwd='')
+    conexao = MySQLdb.connect(host='mysql.padawans.dev', database='padawans08', user='padawans08', passwd='kp2019')
     cursor = conexao.cursor()
 
     def listar_todos(self):
@@ -17,10 +17,10 @@ class BackendDao:
         resultado = self.cursor.fetchone()
         return resultado
 
-    def salvar(self, squad:Squad):
+    def salvar(self, backend:Backend):
         comando = f""" insert into backend
         (
-            nomeling
+            nome
         )
         values
         (
@@ -31,7 +31,7 @@ class BackendDao:
         id_inserido = self.cursor.lastrowid
         return id_inserido
 
-    def alterar(self, squad:Squad):
+    def alterar(self, backend:Backend):
         comando = f""" update backend
         set
             nome = '{backend.nome}'

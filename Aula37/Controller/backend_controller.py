@@ -2,7 +2,7 @@ from Dao.backend_dao import BackendDao
 from Model.backend import *
 
 class BackendController:
-    dao = SquadDao()
+    dao = BackendDao()
 
     def listar_todos(self):
         return self.dao.listar_todos()
@@ -10,11 +10,11 @@ class BackendController:
     def buscar_por_id(self, id):
         return self.dao.buscar_por_id(id)
 
-    def salvar(self, squad:Squad):
-        return self.dao.salvar(squad)
+    def salvar(self, backend:Backend):
+        return self.dao.salvar(backend)
 
-    def alterar(self, squad:Squad):
-        self.dao.alterar(squad)
+    def alterar(self, backend:Backend):
+        self.dao.alterar(backend)
 
     def deletar(self, id):
         self.dao.deletar(id)
