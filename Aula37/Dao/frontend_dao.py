@@ -12,7 +12,7 @@ class FrontendDao:
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"select * from frontend where id = {id}"
+        comando = f"select * from frontend where idfrontend = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -35,12 +35,12 @@ class FrontendDao:
         comando = f""" update frontend
         set
             nome = '{frontend.nome}'
-        where id = {frontend.id}
+        where idfrontend = {frontend.idfrontend}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def deletar(self, id):
-        comando = f"delete from frontend where id = {id}"
+        comando = f"delete from frontend where idfrontend = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()

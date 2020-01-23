@@ -6,13 +6,13 @@ class SquadDao:
     cursor = conexao.cursor()
 
     def listar_todos(self):
-        comando = f"select * from squad"
+        comando = f"select id, s.nome, descricao, numero_pessoas, b.nome, f.nome, g.nome from squad as s join backend as b on s.fk_backend = b.idbackend join frontend as f on s.fk_frontend = f.idfrontend join sgbd as g on s.fk_sgbd = g.idsgbd"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"select * from squad where id = {id}"
+        comando = f"select id, s.nome, descricao, numero_pessoas, b.nome, f.nome, g.nome from squad as s join backend as b on s.fk_backend = b.idbackend join frontend as f on s.fk_frontend = f.idfrontend join sgbd as g on s.fk_sgbd = g.idsgbd where id = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado

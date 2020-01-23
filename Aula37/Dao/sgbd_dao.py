@@ -12,7 +12,7 @@ class SgbdDao:
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"select * from sgbd where id = {id}"
+        comando = f"select * from sgbd where idsgbd = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -35,12 +35,12 @@ class SgbdDao:
         comando = f""" update sgbd
         set
             nome = '{sgbd.nome}'
-        where id = {squad.id}
+        where idsgbd = {squad.id}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def deletar(self, id):
-        comando = f"delete from sgbd where id = {id}"
+        comando = f"delete from sgbd where idsgbd = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()

@@ -11,4 +11,4 @@ class Squad:
     sgbd = Sgbd()
 
     def __str__(self):
-        return f'{self.id};{self.nome};{self.descricao};{self.npessoas};{self.backend.id};{self.frontend.id};{self.sgbd.id}'
+        return f'{self.id};{self.nome};{self.descricao};{self.npessoas};{self.backend.idbackend};{self.frontend.idfrontend};{self.sgbd.idsgbd}'

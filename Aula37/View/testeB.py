@@ -10,11 +10,11 @@ squad = Squad()
 # squad.fk_backend = 2
 # squad.fk_frontend = 2
 # squad.fk_sgbd = 1
-squad.id = 1
+squad.id = 5
 
 controller = SquadController()
-print(controller.listar_todos())           #Buscando todos
-#print(controller.buscar_por_id(squad))     #Buscando por id
+#print(controller.listar_todos())           #Buscando todos
+print(controller.buscar_por_id(squad))     #Buscando por id
 #controller.deletar(3)                      #Deletando por id
 #controller.salvar(squad)                   #Adicionando
 #controller.alterar(squad)                   #Alterando 

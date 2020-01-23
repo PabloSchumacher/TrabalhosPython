@@ -12,7 +12,7 @@ class BackendDao:
         return resultado
     
     def buscar_por_id(self, id):
-        comando = f"select * from backend where id = {id}"
+        comando = f"select * from backend where idbackend = {id}"
         self.cursor.execute(comando)
         resultado = self.cursor.fetchone()
         return resultado
@@ -35,12 +35,12 @@ class BackendDao:
         comando = f""" update backend
         set
             nome = '{backend.nome}'
-        where id = {backend.id}
+        where idbackend = {backend.id}
         """
         self.cursor.execute(comando)
         self.conexao.commit()
 
     def deletar(self, id):
-        comando = f"delete from backend where id = {id}"
+        comando = f"delete from backend where idbackend = {id}"
         self.cursor.execute(comando)
         self.conexao.commit()
