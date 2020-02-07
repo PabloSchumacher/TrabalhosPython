@@ -1,7 +1,9 @@
-
 from Aula54.Dao.produto_dao import ProdutoDao
 dao = ProdutoDao()
-produtos = dao.list_all()
+produtos = dao.listar_todos()
 print(produtos)
 for p in produtos:
     print(p)
+
+print("-"*10)
+print(dao.buscar_por_id(1))
