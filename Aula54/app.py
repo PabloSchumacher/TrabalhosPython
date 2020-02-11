@@ -1,4 +1,4 @@
-from Aula54.Dao.produto_dao import ProdutoDao
+from Aula55.dao.produto_dao import ProdutoDao
 dao = ProdutoDao()
 produtos = dao.listar_todos()
 print(produtos)
