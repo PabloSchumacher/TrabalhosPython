@@ -3,7 +3,7 @@ n = int(input('Insira o número: '))
 def solucao(n):
     binario = bin(n)
     binario = binario.replace('0b','')
-    print(f'O seu número binário é: {binario}')
+    print(f'O número binário informado é: {binario}')
     valida_gap = False
     maior_gap = 0
     gap = 0
